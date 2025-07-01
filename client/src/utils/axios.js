@@ -1,7 +1,11 @@
 import axios from 'axios';
 
+console.log(import.meta.env.VITE_MODE);
 const instance = axios.create({
-  baseURL: process.env.MODE === "PROD" ? process.env.PROD_URL : process.env.DEV_URL,
+  
+  baseURL: import.meta.env.VITE_MODE === "Production" 
+    ? import.meta.env.VITE_PROD_URL 
+    : import.meta.env.VITE_DEV_URL,
   withCredentials: true,
 });
 
