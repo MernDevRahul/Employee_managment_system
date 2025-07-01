@@ -24,8 +24,8 @@ import AdminDashboard from "./pages/admin/AdminDashboard";
 function App() {
   return (
     <Routes>
+      <Route path="/" element={<Login />} />
       <Route path="/admin-login" element={<AdminLogin />} />
-      <Route path="/login" element={<Login />} />
       <Route
         path="/admin"
         element={
