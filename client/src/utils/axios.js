@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: import.meta.env.MODE=== "development"?'http://localhost:5000/api' : "/api",
+  baseURL: process.env.MODE === "PROD" ? process.env.PROD_URL : process.env.DEV_URL,
   withCredentials: true,
 });
 
