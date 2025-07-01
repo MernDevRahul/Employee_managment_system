@@ -13,7 +13,7 @@ function AdminLogin() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('/auth/login', { email, password, role: 'admin' });
+      const res = await axios.post('/auth/login', { email, password, role: 'admin' },{ withCredentials: true });
       localStorage.setItem('token', res.data.token);
       await dispatch(fetchCurrentUser());
       navigate('/admin');

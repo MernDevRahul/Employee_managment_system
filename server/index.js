@@ -15,10 +15,12 @@ dotenv.config();
 const app = express();
 
 //Middleware
-app.use(cors({
-    origin: "http://localhost:5173",
-    credentials: true,
-}));
+app.use(cors(
+    {
+        origin: "https://employee-managment-system-git-main-rahuls-projects-226151a3.vercel.app",
+        credentials: true,
+    }
+));
 app.use(express.json());
 
 //Routes
