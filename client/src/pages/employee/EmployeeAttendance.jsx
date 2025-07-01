@@ -24,17 +24,17 @@ export default function EmployeeAttendance() {
   const today = new Date().toISOString().split('T')[0];
   const hasMarked = me.some(rec => rec.date === today);
 
-  // Calculate attendance statistics
-  const totalDays = me.length;
-  const presentDays = me.filter(rec => rec.status === 'present').length;
-  const absentDays = me.filter(rec => rec.status === 'absent').length;
-  const attendanceRate = totalDays > 0 ? Math.round((presentDays / totalDays) * 100) : 0;
-
   // Filter attendance by selected month and year
   const filteredAttendance = me.filter(rec => {
     const recDate = new Date(rec.date);
     return recDate.getMonth() === selectedMonth && recDate.getFullYear() === selectedYear;
   });
+
+  // Calculate attendance statistics for the selected month
+  const totalDays = filteredAttendance.length;
+  const presentDays = filteredAttendance.filter(rec => rec.status === 'present').length;
+  const absentDays = filteredAttendance.filter(rec => rec.status === 'absent').length;
+  const attendanceRate = totalDays > 0 ? Math.round((presentDays / totalDays) * 100) : 0;
 
   const handleMarkAttendance = () => {
     dispatch(markAttendance());

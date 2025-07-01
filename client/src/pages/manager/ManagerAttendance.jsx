@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchTeamAttendance } from '../../store/attendanceSlice';
-import DashboardLayout from '../../components/DashboardLayout';
 
 export default function ManagerAttendance() {
   const dispatch = useDispatch();

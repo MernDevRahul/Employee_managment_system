@@ -5,9 +5,9 @@ import { fetchCurrentUser } from "./store/authSlice";
 import AdminLogin from "./pages/AdminLogin";
 import Login from "./pages/Login";
 import PrivateRoute from "./components/PrivateRoute";
-import AdminDashboard from "./components/AdminDashboard";
+
 import ManagerDashboard from "./components/ManagerDashbord";
-import EmployeeDashboard from "./components/EmployeeDashboard";
+import EmployeeDashboard from "./pages/employee/EmployeeDashboard";
 import CreateTask from "./pages/admin/CreateTask";
 import AdminTaskList from "./pages/admin/AdminTaskList";
 import ManagerTaskList from "./pages/manager/ManagerTaskList";
@@ -19,6 +19,7 @@ import AllEmployee from "./components/AllEmployee";
 import EmployeeAttendance from "./pages/employee/EmployeeAttendance";
 import ManagerAttendance from "./pages/manager/ManagerAttendance";
 import AdminAttendance from "./pages/admin/AdminAttendance";
+import AdminDashboard from "./pages/admin/AdminDashboard";
 
 function App() {
   return (
